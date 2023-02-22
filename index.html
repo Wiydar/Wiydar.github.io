@@ -1306,66 +1306,15 @@ document.getElementById("defaultOpen").click();
       
   ctx.fillText(atob("dGdAd2l5ZGFzb2Z0"), (canvas.width)/2,50);
 			
-        for(let i=0; i<gRoles.length; i++)
-        {
-            let x = gRoles[i].x*window.devicePixelRatio;
-            let y = gRoles[i].y*window.devicePixelRatio;
-			let z = gRoles[i].z*window.devicePixelRatio;
-          		  
-			if(app.VisualCheckbox.ESPBox) {			
-				ctx.beginPath();
-				ctx.lineWidth=5; 
-				ctx.strokeStyle="#6222ED"; 
-				ctx.fillStyle = "rgba(98,34,237,.5)";
-				if (app.VisualCheckbox.ESPBoxType == 1){
-					ctx.roundRect(x - 1400 / z, y - 5000 / z, 2800/z, 5000/z, Number(document.getElementById("myRange5").value)); 
-					ctx.stroke();
-				}
-				if (app.VisualCheckbox.ESPBoxType == 2){
-					ctx.roundRect(x - 1400 / z, y - 5000 / z, 2800/z, 5000/z, Number(document.getElementById("myRange5").value));
-					ctx.fill();
-				}
-				if (app.VisualCheckbox.ESPBoxType == 3){
-					ctx.roundRect(x - 1400 / z, y - 5000 / z, 2800/z, 5000/z, Number(document.getElementById("myRange5").value));
-					ctx.fill();
-					ctx.stroke();
-				}
-            }
-            if(app.VisualCheckbox.ESPLine) {
-                ctx.beginPath();
-                ctx.lineWidth=2; 
-                ctx.strokeStyle="#6222ED";
-				if (app.VisualCheckbox.ESPLineType == 1) {
-					ctx.moveTo((canvas.width)/2, 0); 
-				} 
-				if (app.VisualCheckbox.ESPLineType == 2) {
-					ctx.moveTo((canvas.width)/2, (canvas.height)/2); 
-				} 
-				if (app.VisualCheckbox.ESPLineType == 3) {
-					ctx.moveTo((canvas.width)/2, (canvas.height)/1); 
-				}               
-                ctx.lineTo(x, y); 
-                ctx.stroke(); 
-            }			
-			if(app.VisualCheckbox.ESPDistance) {
-			    ctx.fillStyle="white";
-                ctx.font='19px Arial';
-				ctx.fillText("["+Math.floor(z)+"M]", x, y);
-            }
-        }
-			
-		
-	
-    setInterval(function(){startdraw();}, 30);
-
+       
 });                   </script>
        <script> 		
  var app = new Vue({
             el: '#app',
 
             },
-            mounted() {
-				this.setRect(420, 240);
+                   mounted() {
+				this.setRect(320, 240);
 				setButtonImage("https://static.vecteezy.com/system/resources/previews/000/582/202/original/plus-icon-vector-illustration.jpg");                
             },
             methods: {									
