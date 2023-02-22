@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap');
+
+.govnososi{
+background: rgba(34,34,34,.72);
+	margin: 0rem;
+	min-height: 100vh;
+  width: 100%;
+}
+
+body {
+  color:white;
+}
+
+p {
+    color: white;
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+span {
+    color: white;
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+h3{
+	font-size: 19px;
+	font-family: 'aileron', sans-serif;
+}
+
+label{
+	font-size: 17px;
+	font-family: 'aileron', sans-serif;
+}
+h4{
+    font-size: 11px;
+	font-family: 'aileron', sans-serif;
+    color: white;
+}
+          * {
+              padding: 0;
+              margin: 0;
+          }
+
+        /*菜单*/
+        *:not(input, checkbox, textarea) {
+            /*禁止文本选择*/
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+            /* Non-prefixed version, currently */
+        }
+
+        .aymenu {
+            position: fixed;
+            z-index: 1;
+            width: 435px;
+            height: 245px;
+            top: calc(50% - 180px);
+            left: calc(50% - 180px);
+            z-index: 999;
+            background: #17234b;
+            background-size: cover;
+            border-radius: 8px;
+            overflow: hidden;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+/* Style the tab */
+.tab {
+    height: 90px;
+  width: 100%;
+    overflow: hidden;
+    background-color: none;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  position: relative;
+  top: 9%;
+  left: 2%;
+    background-color: transparent;
+  color: white;
+    float: center;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    padding: 1px 10px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #AF30B7;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #AF30B7;
+}
+
+/* Style the tab content */
+.tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #2f375c;
+    width: 100%;
+    border-left: none;
+    height:140px;
+}
+
+.real-checkbox {
+	width: 0;
+	height: 0;
+	opacity: 0;
+	position: absolute;
+	z-index: -1;
+}
+
+.real-checkbox:focus + .custom-checkbox {
+
+}
+
+.custom-checkbox {
+	position: relative;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: #213766;
+	border-radius: 4px;
+	vertical-align: sub;
+	margin-right: 5px;
+}
+
+.custom-checkbox::before {
+	content: '';
+
+	/* Рисуем галочку */
+	display: inline-block;
+	width: 9px;
+	height: 9px;
+	background-image: url('./check.svg');
+	background-size: contain;
+	background-repeat: no-repeat;
+
+	/* Выравниваем по центру */
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	margin-top: 1px;
+
+	transition: 0.2s ease-in;
+}
+
+/*
+Активируем фейковый / декоративный чекбокс
+*/
+
+.real-checkbox:checked + .custom-checkbox::before {
+	transform: translate(-50%, -50%) scale(1);
+}
+
+input[type="range"] { 
+    margin: auto;
+    -webkit-appearance: none;
+    background: none;
+    position: relative;
+    overflow: hidden;
+    height: 20px;
+    width: 130px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px; /* iOS */
+}
+
+::-webkit-slider-runnable-track {
+    background: #233769;
+}
+
+/*
+ * 1. Set to 0 width and remove border for a slider without a thumb
+ * 2. Shadow is negative the full width of the input and has a spread 
+ *    of the width of the input.
+ */
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 5px; /* 1 */
+    height: 13px;
+    background: #6998DA; /* 2 */
+    border-radius: 13px;
+}
+
+::-moz-range-track {
+    height: 40px;
+    background: transparent;
+}
+
+::-moz-range-thumb {
+    background: transparent;
+    height: 40px;
+    width: 20px;
+    border-radius: 9px;
+    box-sizing: border-box;
+}
+
+::-ms-fill-lower { 
+    background: transparent;
+}
+
+::-ms-thumb { 
+    background: transparent;
+    height: 40px;
+    width: 20px;
+    box-sizing: border-box;
+}
+
+::-ms-ticks-after { 
+    display: none; 
+}
+
+::-ms-ticks-before { 
+    display: none; 
+}
+
+::-ms-track { 
+    background: transparent;
+    color: transparent;
+    height: 40px;
+    border: none;
+}
+
+::-ms-tooltip { 
+    display: none;
+}
