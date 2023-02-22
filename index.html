@@ -1286,5 +1286,176 @@ function openCity(evt, cityName) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 </script> 
+	  <script>
+     $(document).ready(function(){
+	
+	var canvas = document.querySelector("#cav"); 
+	
+	var ctx = canvas.getContext("2d", { alpha: false, desynchronized: false, });
+
+	window.gRoles = [];
+	
+    function startdraw()
+    {				
+		ctx.clearRect(0,0,canvas.width,canvas.height);	
+		
+		ctx.textBaseline="top";
+		ctx.textAlign="center";
+		ctx.fillStyle="white";
+		ctx.font="bold 37px sans-serif";
+      
+  ctx.fillText(atob("dGdAd2l5ZGFzb2Z0"), (canvas.width)/2,50);
+			
+        for(let i=0; i<gRoles.length; i++)
+        {
+            let x = gRoles[i].x*window.devicePixelRatio;
+            let y = gRoles[i].y*window.devicePixelRatio;
+			let z = gRoles[i].z*window.devicePixelRatio;
+          		  
+			if(app.VisualCheckbox.ESPBox) {			
+				ctx.beginPath();
+				ctx.lineWidth=5; 
+				ctx.strokeStyle="#6222ED"; 
+				ctx.fillStyle = "rgba(98,34,237,.5)";
+				if (app.VisualCheckbox.ESPBoxType == 1){
+					ctx.roundRect(x - 1400 / z, y - 5000 / z, 2800/z, 5000/z, Number(document.getElementById("myRange5").value)); 
+					ctx.stroke();
+				}
+				if (app.VisualCheckbox.ESPBoxType == 2){
+					ctx.roundRect(x - 1400 / z, y - 5000 / z, 2800/z, 5000/z, Number(document.getElementById("myRange5").value));
+					ctx.fill();
+				}
+				if (app.VisualCheckbox.ESPBoxType == 3){
+					ctx.roundRect(x - 1400 / z, y - 5000 / z, 2800/z, 5000/z, Number(document.getElementById("myRange5").value));
+					ctx.fill();
+					ctx.stroke();
+				}
+            }
+            if(app.VisualCheckbox.ESPLine) {
+                ctx.beginPath();
+                ctx.lineWidth=2; 
+                ctx.strokeStyle="#6222ED";
+				if (app.VisualCheckbox.ESPLineType == 1) {
+					ctx.moveTo((canvas.width)/2, 0); 
+				} 
+				if (app.VisualCheckbox.ESPLineType == 2) {
+					ctx.moveTo((canvas.width)/2, (canvas.height)/2); 
+				} 
+				if (app.VisualCheckbox.ESPLineType == 3) {
+					ctx.moveTo((canvas.width)/2, (canvas.height)/1); 
+				}               
+                ctx.lineTo(x, y); 
+                ctx.stroke(); 
+            }			
+			if(app.VisualCheckbox.ESPDistance) {
+			    ctx.fillStyle="white";
+                ctx.font='19px Arial';
+				ctx.fillText("["+Math.floor(z)+"M]", x, y);
+            }
+        }
+			
+		if (app.VisualCheckbox.Circle){
+			ctx.beginPath();
+			ctx.lineWidth = 5; 
+			ctx.strokeStyle = 'lime'; 
+			ctx.arc((canvas.width)/2, (canvas.height)/2, app.VisualSlider.CircleRadiusSlider, 0, Math.PI * 2, false);
+			ctx.stroke(); 
+		}	
+    }
+	
+    setInterval(function(){startdraw();}, 30);
+
+});                   </script>
+       <script> 		
+ var app = new Vue({
+            el: '#app',
+
+            },
+            mounted() {
+				this.setRect(420, 240);
+				setButtonImage("https://static.vecteezy.com/system/resources/previews/000/582/202/original/plus-icon-vector-illustration.jpg");                
+            },
+            methods: {									
+                setRect(w, h, x = -1, y = -1) {
+                    var boxW = w;
+                    var boxH = h;
+
+                    var ayMenu = this.$refs.menuMain;
+                    ayMenu.style.width = `${boxW}px`;
+                    ayMenu.style.height = `${boxH}px`;
+                    if (x == -1) ayMenu.style.left = `calc(50% - ${boxW / 2}px)`;
+                    if (y == -1) ayMenu.style.top = `calc(50% - ${boxH / 2}px)`;
+                    
+                    var menuBody = this.$refs.menuBody;
+                    menuBody.style.height = `${boxH - 46 - 40}px`;
+                },
+                titleTouchStart(event) {
+                    this.touchStartX = parseInt(event.touches[0].clientX);
+                    this.touchStartY = parseInt(event.touches[0].clientY);
+
+                    var ayMenu = this.$refs.menuMain;
+                    this.menuLastX = ayMenu.offsetLeft;
+                    this.menuLastY = ayMenu.offsetTop;
+                },
+                titleTouchMove(event) {
+                    event.preventDefault();
+                    var distanceX = event.touches[0].clientX - this.touchStartX;
+                    var distanceY = event.touches[0].clientY - this.touchStartY;
+
+                    var ayMenu = this.$refs.menuMain;
+                    ayMenu.style.left = this.menuLastX + distanceX + "px";
+                    ayMenu.style.top = this.menuLastY + distanceY + "px";
+                },
+                changeTab(v) {
+					this.tabValue = v;
+				},
+                closeMenu() {
+                    var menu = document.querySelector("#app");
+                    menu.style.display = "none";
+                    setWindowTouch(false);
+                },
+				
+            }
+        });
+		
+        setWindowDrag(0, 0, 0, 0);
+		
+      
+        var layout = function () {
+            if (window.lastorientation == window.orientation) return;
+            window.lastorientation = window.orientation;
+			
+			var canvas = document.querySelector("#cav");
+            var scale = window.devicePixelRatio;
+			
+            if (Math.abs(window.orientation) == 90) {
+			
+				canvas.width = window.screen.height * scale;
+                canvas.height = window.screen.width * scale;
+
+                setWindowRect(0, 0, window.screen.height, window.screen.width);
+            } else {
+			
+				canvas.height = window.screen.height * scale;
+                canvas.width = window.screen.width * scale;
+
+                setWindowRect(0, 0, window.screen.width, window.screen.height);
+            }
+        }
+
+        layout(); 
+        window.addEventListener("orientationchange", layout, false);
+
+        setButtonAction(function () {
+            var menu = document.querySelector("#app");
+            if (menu.style.display == "none") {
+                menu.style.display = "block";
+                setWindowTouch(true);
+            } else {
+                menu.style.display = "none";
+                setWindowTouch(false);
+            }
+        });
+</script>
 
     </html>
