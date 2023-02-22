@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap');
+
+body {
+  background: ;
+}
+
+p {
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+h3{
+	font-size: 19px;
+	font-family: 'aileron', sans-serif;
+}
+
+label{
+	font-size: 17px;
+	font-family: 'aileron', sans-serif;
+}
+h4{
+    font-size: 11px;
+	font-family: 'aileron', sans-serif;
+    color: white;
+}
+          * {
+              padding: 0;
+              margin: 0;
+          }
+
+        /*菜单*/
+        *:not(input, checkbox, textarea) {
+            /*禁止文本选择*/
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+            /* Non-prefixed version, currently */
+        }
+
+        .aymenu {
+            position: fixed;
+            z-index: 1;
+            width: 400px;
+            height: 280px;
+            top: calc(50% - 180px);
+            left: calc(50% - 180px);
+            z-index: 999;
+            opacity: .9;
+            background-color: #252226;
+            border: 2px solid white;
+            border-radius: 18px;
+            overflow: hidden;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    .tltbar {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-size: 21px;
+  margin-top: -13px;
+}
+
+/* Style the tab */
+.tab {
+    float: left;
+    border-right: 1px solid white;
+    width: 30%;
+    height: 228px;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    display: block;
+    padding: 5px 20px;
+	width: 100%;
+	background: none; 
+	font-size: 16px;
+	text-decoration: none;
+	color: #939192;
+    border: none;
+    text-align: center;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: none;
+}
+
+/* Create an active/current "tab button" class */
+.tab button.active {
+    color: white;
+}
+
+/* Style the tab content */
+.tabcontent {
+    position: relative;
+    background: transparent;
+  color: white;
+    float: right;
+    padding: 0px 12px;
+    width: 65%;
+    border-left: none;
+    overflow: scroll;
+    height: 245px;
+    bottom: 229px;
+    left: 6px;
+}
+bcg-button {
+            max-height: 11px;
+            padding: 11px;
+            border-radius: 8px;
+            width: 226px;
+            background-color: none;
+            border: 1px solid white;
+            color: white;
+            position: absolute;
+}
+
+sch-button{
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  position:relative;
+  padding: 11px;
+  border: 1px solid white;
+  color: white;
+  display:inline-block;
+  box-sizing:border-box;
+  position: relative;
+  text-align: center;
+  height:25px;
+  margin-top:5px;
+   
+  
+ display:flex;
+  justify-content: center;
+  algin-items: center;
+  padding:10px;
+  font-size:10px;
+  line-height:1.2;
+  text-align:center;
+  border-radius:4px;
+  cursor:pointer;
+  -webkit-transition:opacity .2s;transition:opacity .2s;
+  -webkit-appearance:none
+}
+
+.checkbox {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.checkbox__input {
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+}
+
+.checkbox__label:before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+
+    background: url("close.svg") no-repeat;
+    background-size: 17px 17px;
+    border-radius: 3px;
+
+    position: absolute;
+    top: 8px;
+    left: 86%;
+    z-index: 1;
+
+    transition: opacity .3s linear;
+}
+
+.checkbox__label:after {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 18px;
+
+    background: url("check.svg") no-repeat;
+    background-size: 20px 20px;
+    opacity: 0;
+
+    position: absolute;
+    top: 5.8px;
+    left: 85.6%;
+    z-index: 2;
+
+    transition: opacity .3s linear;
+}
+
+.checkbox__input:checked + .checkbox__label:before {
+  opacity: 0;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.checkbox__input:checked + .checkbox__label:after {
+    opacity: 1;
+}
+
+.TeamRadar {
+    background: none;
+}
+.FastGame {
+    background: none;
+}
+.FireRate {
+    background: none;
+}
+.JumpHack {
+    background: none;
+}
+.AlwaysRespawn {
+    background: none;
+}
+.BuyAnywhere {
+    background: none;
+}
+.MoneyHack {
+    background: none;
+}
+.NoRecoil {
+    background: none;
+}
+.InfinityAmmo {
+    background: none;
+}
+.MedalHack {
+    background: none;
+}
+.ArmRaceWin {
+    background: none;
+}
+.Float {
+    background: none;
+}
+.MoveBefore {
+    background: none;
+}
+.AntiFlash {
+    background: none;
+}
+.AntiHE {
+    background: none;
+}
+.NoGrenade {
+    background: none;
+}
+.FastGrenade {
+    background: none;
+}
+.FastPlant {
+    background: none;
+}
+.PlantAnywhere {
+    background: none;
+}
+.bombimmunity {
+    background: none;
+}
+.friendlyfire {
+    background: none;
+      }
+.StopTime {
+    background: none;
+      }
+.wave {
+background-image: url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgMTc0LjQ3MDY0IDQ2LjM0NTk0IiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IndhdmUtZ3JhZGllbnQiIHgxPSIwJSIgeTE9IjEwMCUiIHgyPSIwJSIgeTI9IjAlIj4KICAgICAgPHN0b3Agc3R5bGU9InN0b3AtY29sb3I6YmxhY2s7IiBvZmZzZXQ9IjAiIGlkPSJkZWVwLW9jZWFuIiAvPgogICAgICA8c3RvcCBzdHlsZT0ic3RvcC1jb2xvcjojNDg0ODQ4OyIgb2Zmc2V0PSIxIiBpZD0ic2hhbGxvdy1vY2VhbiIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxwYXRoIHN0eWxlPSJmaWxsOnVybCgjd2F2ZS1ncmFkaWVudCk7ZmlsbC1ydWxlOmV2ZW5vZGQiIGQ9Im0gMCwxMS4zODQ0OCBjIDAsMCAyMS4xMzM4NTEsMTEuMzk1MzEgNDMuNjE3NjYxLDExLjM4NDQxIEMgNjYuMTAxNDcxLDIyLjc1Nzk5IDEwNy45Njg1NiwwLjAzMjYyIDEzMC41MDgsN2UtNSBjIDIyLjUzOTQ0LC0wLjAzMjUgNDMuOTYyNjQsMTEuMzg0NDEgNDMuOTYyNjQsMTEuMzg0NDEgViA0Ni4zNDU5NCBIIDAgWiIgLz4KPC9zdmc+");
+background-repeat: repeat-x;
+background-size: 500px auto;
+background-position: bottom;
+position: absolute;
+bottom: 0%;
+width: 100%;
+height: 200px;
+animation: wave 5s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+opacity: 0.7;
+animation: swell 5s ease -1.25s infinite, wave 5s cubic-bezier(0.36, 0.45, 0.63, 0.53) -.125s infinite;
+z-index: -2;
+}
+
+@keyframes wave {
+0% {
+background-position-x: 0%;
+}
+100% {
+background-position-x: -500px;
+}
+}
+
+@keyframes swell {
+0%, 100% {
+background-position: right bottom 10px;
+}
+50% {
+background-position: right bottom 0;
+}
+} 
+
+.van-cell-group {
+background: transparent;
+overflow-y: scroll;
+  border: 1px solid white;
+  height: 115px;
+  width: 130px;
+  border-radius: 16px;
+}
+hh-button {
+  max-height: 5px;
+            padding: 14px;
+            border-radius: 8px;
+            width: 59px;
+            background-color: transparent;
+            color: white;
+  border: 1px solid white;
+            position: absolute;
+}
+.pbtn {
+  position: relative;
+  text-align: center;
+  margin-top: -8px;
+}
+.right {
+position: ;
+  margin-left: 139px;
+  margin-top: -116px;
+}
