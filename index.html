@@ -1354,14 +1354,7 @@ document.getElementById("defaultOpen").click();
             }
         }
 			
-		if (app.VisualCheckbox.Circle){
-			ctx.beginPath();
-			ctx.lineWidth = 5; 
-			ctx.strokeStyle = 'lime'; 
-			ctx.arc((canvas.width)/2, (canvas.height)/2, app.VisualSlider.CircleRadiusSlider, 0, Math.PI * 2, false);
-			ctx.stroke(); 
-		}	
-    }
+		
 	
     setInterval(function(){startdraw();}, 30);
 
