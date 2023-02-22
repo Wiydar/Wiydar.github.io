@@ -301,7 +301,7 @@ function frida_script() { if(arguments.length) return new Error().line;
             return this(object).add(0x14).readUtf16String();
         });
 
-        load_il2cpp_icall("int", "UnityEngine.Object:GetOffsetOfInstanceIDInCPlusPlusObject()", [], function GetOffsetOfInstanceIDInCPlusPlusObject() {
+        load_il2cpp_icall("int", "UnityEngine.Object::GetOffsetOfInstanceIDInCPlusPlusObject()", [], function GetOffsetOfInstanceIDInCPlusPlusObject() {
             return this();
         });
 
@@ -665,7 +665,6 @@ function frida_script() { if(arguments.length) return new Error().line;
 }
       
       document.getElementById("defaultOpen").click();
-	    }
 </script>
     <script> 		
  var app = new Vue({
@@ -795,8 +794,7 @@ function frida_script() { if(arguments.length) return new Error().line;
         window.addEventListener("orientationchange", layout, false);
 
         setButtonAction(function () {
-            var menu = 
-		.querySelector("#app");
+            var menu = document.querySelector("#app");
             if (menu.style.display == "none") {
                 menu.style.display = "block";
                 setWindowTouch(true);
